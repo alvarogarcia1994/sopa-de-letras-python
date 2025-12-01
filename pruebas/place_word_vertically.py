@@ -20,6 +20,12 @@ def fill_empty(board_rows, board_columns):
     return board
 
 def place_word_vertically(board, word, starting_row, column, reverse=False):
+    """   
+    Places 'word' vertically on the board starting at (starting_row, column).
+    If reverse=True, places the reversed word.
+    Returns True if placed successfully, False otherwise.
+
+    """
 
     #Variable block
     rows_number = len(board)
