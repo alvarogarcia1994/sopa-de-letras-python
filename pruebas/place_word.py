@@ -4,15 +4,15 @@ import sys
 
 #Function to create an empty board
 def create_empty_board(rows, columns):
+    """
+    Create an empty word search board initialized with dots.
+    """
     return [["." for _ in range(columns)] for _ in range(rows)]
 
 #Function to fill with uppercase letters the board, it takes 2 arguments
 def fill_empty(board):
     """
-    Docstring for fill_empty
-    
-    :param board: receives an empty board, which will be filled with random uppercase letters
-    
+    Receives an empty board, which will be filled with random uppercase letters
     """
     letters = string.ascii_uppercase
     for row in range(10):
@@ -22,6 +22,11 @@ def fill_empty(board):
 
 #Function to place the word horizontally, vertically, diagonally and randomly
 def place_word(board, word, direction=None):
+    """
+    Attempts to place a word on the board in a random direction.
+    Supports 8 possible directions and optional word reversal.
+    Returns True if the word was placed successfully.
+    """
 
     #Variable block
     rows = len(board)
@@ -79,9 +84,12 @@ def place_word(board, word, direction=None):
 
 def load_words_from_file(filename):
     """
-    Docstring for load_words_from_file
-    
-    :param filename: receives a plain text file with the every word to found in the word search 
+    Loads words from a text file and returns them as a list of uppercase strings.
+
+    Each line in the file represents one word to be hidden in the word search.
+
+    :param filename: Path to the text file containing the words
+    :return: List of words in uppercase
     """
     words = []
     with open(filename, "r", encoding="utf-8") as file:
@@ -93,11 +101,13 @@ def load_words_from_file(filename):
 
 def generate_and_show_board(word_list, rows, columns):
     """
-    Docstring for generate_and_show_board
-    
-    :param word_list: Description
-    :param rows: Number of the rows of the word search board
-    :param columns: Number of the columns of word search board
+    Generates a word search board, places all words,
+    fills empty spaces with random letters and prints the board.
+
+    :param word_list: List of words to hide in the board
+    :param rows: Number of board rows
+    :param columns: Number of board columns
+    :return: Generated word search board
     """
     board = create_empty_board(rows, columns)
 
@@ -114,7 +124,7 @@ def generate_and_show_board(word_list, rows, columns):
 
 def main():
     """
-    Docstring for main
+
 
     Main program
     """

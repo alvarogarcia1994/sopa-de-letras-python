@@ -3,15 +3,15 @@ import string
 
 #Function to create an empty board
 def create_empty_board(rows, columns):
+    """
+    Create an empty word search board initialized with dots.
+    """
     return [["." for _ in range(columns)] for _ in range(rows)]
 
 #Function to fill with uppercase letters the board, it takes 2 arguments
 def fill_empty(board):
     """
-    Docstring for fill_empty
-    
-    :param board: receives an empty board, which will be filled with random uppercase letters
-    
+    Receives an empty board, which will be filled with random uppercase letters
     """
     letters = string.ascii_uppercase
     for row in range(board_rows):
@@ -95,16 +95,18 @@ def place_word_vertically(board, word, starting_row, column, reverse=False):
 #Function to place the word diagonally
 def place_word_diagonally(board, word, start_row, start_col, direction="down_right", reverse=False):
     """
-    Places a word diagonally in the board.
-    
-    :param board: 2D list (matrix)
-    :param word: string
-    :param start_row: starting row index
-    :param start_col: starting column index
-    :param reverse: bool → place reversed word if True
-    :param direction: "down_right, up_right, up_left, down_left"
-    :return: True if placed successfully, False otherwise
+    Places a word diagonally on the board starting from a given position.
+
+    :param board: 2D list representing the word search board
+    :param word: Word to be placed on the board
+    :param start_row: Starting row index
+    :param start_col: Starting column index
+    :param direction: Diagonal direction ("down_right", "down_left",
+                      "up_right", "up_left")
+    :param reverse: If True, places the word reversed
+    :return: True if the word was placed successfully, False otherwise
     """
+
 
     #Variable block
     word_length = len(word)
@@ -147,10 +149,14 @@ def place_word_diagonally(board, word, start_row, start_col, direction="down_rig
 
 def place_word_randomly(board, word):
     """
-    Docstring for place_word_randomly
-    
-    :param board: Takes an empty board, which will be filled with random uppercase letters afterwards 
-    :param word: Takes a 6-word array
+    Attempts to place a word on the board in a random direction and orientation.
+
+    The word can be placed horizontally, vertically, or diagonally, and may be
+    reversed. The function makes multiple attempts to find a valid position.
+
+    :param board: 2D list representing the word search board
+    :param word: Word to place on the board
+    :return: True if the word was placed successfully, False otherwise
     """
 
     #Valid directions

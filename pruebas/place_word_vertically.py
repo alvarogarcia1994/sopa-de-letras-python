@@ -4,10 +4,8 @@ import string
 #Function to fill with uppercase letters the board, it takes 2 arguments
 def fill_empty(board_rows, board_columns):
     """
-    Docstring for fill_empty
-    
-    :param board_rows: Description
-    :param board_columns: Description
+    Receives an empty board, which will be filled with random uppercase letters
+
     """
     board = []
     letters = string.ascii_uppercase

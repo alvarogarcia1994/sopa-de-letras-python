@@ -4,10 +4,8 @@ import string
 #Function to fill with uppercase letters the board, it takes 2 arguments
 def fill_empty(board_rows, board_columns):
     """
-    Docstring for fill_empty
-    
-    :param board_rows: defines the number of rows of the board
-    :param board_columns: defines the number of columns of the board
+    Receives an empty board, which will be filled with random uppercase letters
+
     """
     #Main table
     board = []
@@ -28,16 +26,18 @@ def fill_empty(board_rows, board_columns):
 #Function to place the word diagonally
 def place_word_diagonally(board, word, start_row, start_col, direction="down_right", reverse=False):
     """
-    Places a word diagonally in the board.
-    
-    :param board: 2D list (matrix)
-    :param word: string
-    :param start_row: starting row index
-    :param start_col: starting column index
-    :param reverse: bool → place reversed word if True
-    :param direction: "down_right, up_right, up_left, down_left"
-    :return: True if placed successfully, False otherwise
+    Places a word diagonally on the board starting from a given position.
+
+    :param board: 2D list representing the word search board
+    :param word: Word to be placed on the board
+    :param start_row: Starting row index
+    :param start_col: Starting column index
+    :param direction: Diagonal direction ("down_right", "down_left",
+                      "up_right", "up_left")
+    :param reverse: If True, places the word reversed
+    :return: True if the word was placed successfully, False otherwise
     """
+
 
     #Variable block
     rows_number = len(board)
