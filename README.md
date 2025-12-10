@@ -1,5 +1,4 @@
 # sopa-de-letras-python
-# sopa-de-letras-python
 
 # Spanish (ES)
 # Juego de sopa de letras (Python)
